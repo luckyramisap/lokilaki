@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API dari Hosting ke GitHub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f2027;
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+    }
+    .box {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔗 API Demo</h1>
+  <div class="box" id="hasil">Loading...</div>
+
+  <script>
+    // Ganti URL dengan API di hosting kamu
+    fetch("https://api.lokilaki.my.id/data.php")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("hasil").innerHTML = `
+          <p>Status: ${data.status}</p>
+          <p>Pesan: ${data.message}</p>
+          <p>Waktu: ${data.waktu}</p>
+        `;
+      })
+      .catch(error => {
+        document.getElementById("hasil").innerHTML = "Gagal ambil API: " + error;
+      });
+  </script>
+</body>
+</html>
