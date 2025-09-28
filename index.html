@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal — Loki Laki</title>
+  <!-- Deskripsi (150–160 karakter) -->
+  <meta name="description" content="Portal Loki Laki. Project, Blog, artikel, dan portofolio.">
+
+  <!-- Kata kunci (Google opsional) -->
+  <meta name="keywords" content="portal pribadi, blog, artikel, futuristik, profesional, lucky ramisap, loki laki">
+
+  <!-- Author -->
+  <meta name="author" content="Lucky Ramisap">
+
+  <!-- Open Graph (Facebook, WhatsApp, dll) -->
+  <meta property="og:title" content="Portal - Loki Laki">
+  <meta property="og:description" content="Portal Loki Laki. Project, Blog, artikel, dan portofolio.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lokilaki.my.id/">
+  <meta property="og:image" content="https://lokilaki.my.id/thumbnail.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portal - Loki Laki">
+  <meta name="twitter:description" content="Portal Loki Laki. Project, Blog, artikel, dan portofolio.">
+  <meta name="twitter:image" content="https://lokilaki.my.id/thumbnail.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Canonical-->
+  <link rel="canonical" href="https://lokilaki.my.id/">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card: rgba(255,255,255,0.04);
+      --glass: rgba(255,255,255,0.06);
+      --accent-a: linear-gradient(135deg,#7c3aed,#06b6d4);
+      --accent-b: linear-gradient(135deg,#ff7ab6,#ffb86b);
+      --muted: rgba(255,255,255,0.65);
+      --glass-border: rgba(255,255,255,0.08);
+      --glass-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:radial-gradient(1000px 600px at 10% 10%, rgba(124,58,237,0.12), transparent 6%), radial-gradient(900px 500px at 90% 90%, rgba(6,182,212,0.06), transparent 8%), var(--bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    a{color:inherit;text-decoration:none}
+
+    /* Layout */
+    .wrap{max-width:1100px;margin:32px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;box-shadow:0 6px 20px rgba(12,18,30,0.6)}
+    .brand h1{margin:0;font-size:1.05rem;letter-spacing:0.6px}
+    nav{display:flex;gap:12px;align-items:center}
+    .nav-link{padding:8px 12px;border-radius:10px;font-weight:600;color:var(--muted);transition:all .18s}
+    .nav-link:hover{background:var(--card);color:white;transform:translateY(-2px)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px;align-items:stretch}
+    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid var(--glass-border);border-radius:16px;padding:22px;box-shadow:var(--glass-shadow)}
+    .intro h2{margin:0;font-size:2.05rem;line-height:1.02}
+    .intro p{color:var(--muted);margin-top:12px}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:12px;font-weight:700;cursor:pointer;border:0}
+    .btn-primary{background:var(--accent-a);color:white;box-shadow:0 8px 22px rgba(124,58,237,0.16)}
+    .btn-ghost{background:transparent;border:1px solid var(--glass-border);color:var(--muted)}
+
+    /* Right column: card */
+    .profile{display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center}
+    .avatar{width:120px;height:120px;border-radius:18px;background:conic-gradient(from 180deg at 50% 50%, #7c3aed, #06b6d4, #ff7ab6, #7c3aed);display:flex;align-items:center;justify-content:center;font-weight:800;color:#061024;font-size:40px;box-shadow:0 10px 30px rgba(12,18,30,0.6)}
+    .stats{display:flex;gap:10px}
+    .stat{padding:10px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);min-width:84px}
+    .muted{color:var(--muted);font-size:0.9rem}
+
+    /* Projects */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid var(--glass-border)}
+    .card h3{margin:0 0 8px 0}
+    .tag{display:inline-block;padding:6px 8px;border-radius:999px;font-size:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)}
+
+    /* Blog list */
+    .list{display:flex;flex-direction:column;gap:12px}
+    .list .item{display:flex;gap:12px;align-items:center;padding:10px;border-radius:10px}
+    .list .item .mini{width:72px;height:52px;border-radius:8px;background:linear-gradient(135deg,#ff7ab6,#ffb86b);display:flex;align-items:center;justify-content:center;color:#061024;font-weight:700}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted)}
+
+    /* floating quick actions */
+    .fab{position:fixed;right:22px;bottom:22px;border-radius:14px;padding:12px 14px;backdrop-filter:blur(6px);border:1px solid var(--glass-border);background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));cursor:pointer}
+
+    /* responsiveness */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .wrap{padding:16px}
+      nav{display:none}
+      .grid{grid-template-columns:1fr}
+      .avatar{width:96px;height:96px;font-size:34px}
+      .hero{gap:16px}
+    }
+
+    /* subtle animations */
+    .float{animation:float 6s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+    /* animated blobs background canvas placeholder */
+    #bgCanvas{position:fixed;inset:0;z-index:-1}
+
+    /* form modal */
+    .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(3,7,18,0.5);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:all .18s}
+    .modal.open{opacity:1;pointer-events:all}
+    .modal .box{width:480px;max-width:92%;padding:18px;border-radius:14px}
+
+    .heart {
+  color: #ff4b5c;
+  animation: pulse 1.5s infinite;
+  display: inline-block;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+  </style>
+</head>
+<body>
+  <canvas id="bgCanvas"></canvas>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">LAKI</div>
+        <div>
+          <h1>Loki Laki</h1>
+          <div class="muted">Portal &mdash; Project, Blog, artikel, dan portofolio</div>
+        </div>
+      </div>
+
+      <nav>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#blog">Blog</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <button id="themeToggle" class="nav-link">🌗 Theme</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="panel intro">
+        <h2>Halo — saya Loki. Saya membuat sesuatu yang berguna, cepat, dan indah.</h2>
+        <p>Portal ini adalah tampilan personal yang interaktif: profil singkat, proyek, tulisan, dan kontak. Dibangun dengan HTML/CSS/JS saja supaya mudah dikustom.</p>
+
+        <div class="cta">
+          <button class="btn btn-primary" id="hireBtn">Hubungi Saya</button>
+          <button class="btn btn-ghost" id="resumeBtn">Unduh Resume</button>
+        </div>
+
+        <div style="margin-top:22px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+          <div class="card" style="display:flex;align-items:center;gap:12px;min-width:220px">
+            <div style="flex:1">
+              <div class="muted">Target Musiman</div>
+              <div style="font-weight:800;font-size:1.05rem">+150% terlihat</div>
+            </div>
+            <div style="min-width:90px;text-align:center">
+              <div style="font-weight:800">79%</div>
+              <div class="muted">Realtime</div>
+            </div>
+          </div>
+
+          <div class="card" style="min-width:220px">
+            <div class="muted">Alokasi</div>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <div class="tag">Investasi</div>
+              <div class="tag">Tabungan</div>
+              <div class="tag">Hiburan</div>
+            </div>
+          </div>
+        </div>
+
+        <hr style="margin:22px 0;border:none;border-top:1px solid var(--glass-border)">
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div style="min-width:220px">
+            <div class="muted">Skill Utama</div>
+            <div style="font-weight:800">Automasi · Excel · PHP · VB.NET · Mobile App</div>
+          </div>
+
+          <div style="min-width:220px">
+            <div class="muted">Waktu Respon</div>
+            <div style="font-weight:800">Biasanya dalam 12 jam</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel profile">
+        <div class="avatar float">LAKI</div>
+        <div style="font-weight:700;font-size:1rem">Loki Laki</div>
+        <div class="muted">Senioritas · Pengembang · Excel wizard</div>
+
+        <div class="stats">
+          <div class="stat"><div style="font-weight:800">12y</div><div class="muted">Experience</div></div>
+          <div class="stat"><div style="font-weight:800">120+</div><div class="muted">Projects</div></div>
+        </div>
+
+        <div style="width:100%">
+          <div style="display:flex;gap:12px;justify-content:center;margin-top:8px">
+            <button class="btn btn-primary" onclick="openSection('projects')">Lihat Proyek</button>
+            <button class="btn btn-ghost" onclick="openSection('blog')">Artikel</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" style="margin-top:22px">
+      <div class="panel">
+        <h3>Tentang Saya</h3>
+        <p class="muted">Saya berfokus membuat solusi yang menghemat waktu: mebuat berbagai program, rumus Excel kompleks, automasi bot Telegram ringan, dan integrasi kecil untuk alur kerja sehari-hari. Saya suka merancang hal yang sederhana namun berdampak.</p>
+
+        <div style="margin-top:12px" class="grid">
+          <div class="card">
+            <h3>Automasi</h3>
+            <p class="muted">Script & tools untuk mempercepat proses manual.</p>
+          </div>
+          <div class="card">
+            <h3>Analisa Data</h3>
+            <p class="muted">Rumus & model Excel untuk mengambil keputusan cepat.</p>
+          </div>
+          <div class="card">
+            <h3>Web & Bot</h3>
+            <p class="muted">Bot Telegram dan web sederhana untuk workflow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" style="margin-top:22px">
+      <div class="panel">
+        <h3>Proyek Pilihan</h3>
+        <div class="grid" style="margin-top:12px">
+          <div class="card">
+            <h3>Stock Opname Otomatis</h3>
+            <div class="muted">Sebuah tool yang memotong waktu 1 hari menjadi 2 jam.</div>
+            <div style="margin-top:10px"><span class="tag">VB.NET</span> <span class="tag">Excel</span></div>
+          </div>
+
+          <div class="card">
+            <h3>Bot Unduh Media</h3>
+            <div class="muted">Bot Telegram untuk mengunduh dan menyimpan media dengan antrian.</div>
+            <div style="margin-top:10px"><span class="tag">PHP</span> <span class="tag">Google Drive</span></div>
+          </div>
+
+          <div class="card">
+            <h3>Dashboard Seasonal</h3>
+            <div class="muted">Visualisasi target Nataru & estimasi realisasi per wilayah.</div>
+            <div style="margin-top:10px"><span class="tag">HTML</span> <span class="tag">JS</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" style="margin-top:22px">
+      <div class="panel">
+        <h3>Artikel Terbaru</h3>
+        <div class="list" style="margin-top:12px">
+          <div class="item">
+            <div class="mini">A1</div>
+            <div>
+              <div style="font-weight:700">Mengecilkan Waktu Stock Opname</div>
+              <div class="muted">Trik dan rumus untuk eksekusi cepat.</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="mini">A2</div>
+            <div>
+              <div style="font-weight:700">Bot Telegram Tanpa Library</div>
+              <div class="muted">Membangun bot dengan permintaan HTTP murni.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:22px">
+      <div class="panel">
+        <h3>Hubungi Saya</h3>
+        <p class="muted">Kirim pesan singkat atau buka jadwal pertemuan.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+          <button class="btn btn-primary" id="openForm">Kirim Pesan</button>
+          <a class="btn btn-ghost" href="mailto:skw.lucky@gmail.com">Email: skw.lucky@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="muted"><p>Made with <span class="heart">♥</span> Dibuat untuk menunjukkan kreativitas.</p></div>
+    </footer>
+  </div>
+
+  <button class="fab" id="quickHire">✉️ Hire</button>
+
+  <div class="modal" id="modal">
+    <div class="box panel">
+      <h3>Kirim Pesan</h3>
+      <p class="muted">Isi form di bawah. Ini demo — tidak mengirim apa-apa tanpa backend.</p>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+        <input id="nameInput" placeholder="Nama" style="padding:10px;border-radius:8px;border:1px solid var(--glass-border);background:transparent;color:white">
+        <input id="emailInput" placeholder="Email" style="padding:10px;border-radius:8px;border:1px solid var(--glass-border);background:transparent;color:white">
+        <textarea id="msgInput" rows="5" placeholder="Pesan" style="padding:10px;border-radius:8px;border:1px solid var(--glass-border);background:transparent;color:white"></textarea>
+        <div style="display:flex;gap:8px;justify-content:flex-end">
+          <button class="btn btn-ghost" onclick="closeModal()">Batal</button>
+          <button class="btn btn-primary" id="sendBtn">Kirim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simple smooth section open
+    function openSection(id){
+      document.querySelector('#' + id).scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    // Modal
+    const modal = document.getElementById('modal');
+    document.getElementById('openForm').addEventListener('click', ()=> modal.classList.add('open'));
+    document.getElementById('quickHire').addEventListener('click', ()=> modal.classList.add('open'));
+    document.getElementById('hireBtn').addEventListener('click', ()=> modal.classList.add('open'));
+    function closeModal(){ modal.classList.remove('open'); }
+
+    // Fake send
+    document.getElementById('sendBtn').addEventListener('click', ()=>{
+      const name = document.getElementById('nameInput').value || 'Anonim';
+      const email = document.getElementById('emailInput').value || 'tidak diisi';
+      alert('Terima kasih, ' + name + '! (Demo)\nEmail: ' + email);
+      closeModal();
+    });
+
+    // Theme toggle (light/dark simulated by swapping vars)
+    const themeToggle = document.getElementById('themeToggle');
+    let light = false;
+    themeToggle.addEventListener('click', ()=>{
+      light = !light;
+      if(light){
+        document.documentElement.style.setProperty('--bg','#f6f7fb');
+        document.documentElement.style.setProperty('--card','rgba(3,7,18,0.03)');
+        document.documentElement.style.setProperty('--glass','rgba(3,7,18,0.04)');
+        document.documentElement.style.setProperty('--muted','rgba(2,6,23,0.6)');
+        document.documentElement.style.setProperty('color-scheme','light');
+        themeToggle.textContent = '🌞 Light';
+      } else {
+        document.documentElement.style.setProperty('--bg','#0f1724');
+        document.documentElement.style.setProperty('--card','rgba(255,255,255,0.04)');
+        document.documentElement.style.setProperty('--glass','rgba(255,255,255,0.06)');
+        document.documentElement.style.setProperty('--muted','rgba(255,255,255,0.65)');
+        document.documentElement.style.setProperty('color-scheme','dark');
+        themeToggle.textContent = '🌗 Theme';
+      }
+    });
+
+    // Resume button demo
+    document.getElementById('resumeBtn').addEventListener('click', ()=>{
+      const blob = new Blob([`Resume - Lucky Ramisap\n\n(Ini contoh file resume. Ganti dengan resume asli Anda.)`],{type:'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'resume-lucky.txt'; a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    // Canvas animated blobs for background
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = innerWidth; let h = canvas.height = innerHeight;
+    window.addEventListener('resize', ()=>{w = canvas.width = innerWidth; h = canvas.height = innerHeight});
+
+    function rand(min,max){return Math.random()*(max-min)+min}
+    const blobs = [];
+    for(let i=0;i<6;i++){
+      blobs.push({x:rand(0,w),y:rand(0,h),r:rand(120,360),vx:rand(-0.2,0.2),vy:rand(-0.15,0.15),hue:rand(0,360)})
+    }
+
+    function draw(){
+      ctx.clearRect(0,0,w,h);
+      for(const b of blobs){
+        b.x += b.vx; b.y += b.vy;
+        if(b.x < -b.r) b.x = w + b.r; if(b.x > w + b.r) b.x = -b.r;
+        if(b.y < -b.r) b.y = h + b.r; if(b.y > h + b.r) b.y = -b.r;
+        const g = ctx.createRadialGradient(b.x, b.y, b.r*0.05, b.x, b.y, b.r);
+        g.addColorStop(0, `hsla(${b.hue},80%,60%,0.34)`);
+        g.addColorStop(0.6, `hsla(${(b.hue+60)%360},80%,45%,0.14)`);
+        g.addColorStop(1, `hsla(${(b.hue+120)%360},80%,30%,0)`);
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(b.x,b.y,b.r,0,Math.PI*2); ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    // Small UX: highlight nav when section in view
+    const sections = document.querySelectorAll('section');
+    const links = document.querySelectorAll('nav a');
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(en=>{
+        if(en.isIntersecting){
+          links.forEach(l=>l.classList.remove('active'));
+          const id = en.target.id;
+          const link = document.querySelector(`nav a[href='#${id}']`);
+          if(link) link.style.background = 'var(--card)';
+        }
+      })
+    },{threshold:0.3});
+    sections.forEach(s=>obs.observe(s));
+
+    // Small accessibility: keyboard shortcut H to open contact
+    window.addEventListener('keydown', e=>{ if(e.key.toLowerCase()==='h') modal.classList.add('open') });
+  </script>
+</body>
+</html>
